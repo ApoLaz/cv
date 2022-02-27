@@ -1,0 +1,15 @@
+title: ApoLaz CV
+description:  A beautiful template for your CV.
+url: https://apolaz.github.io/cv/
+baseurl: ''
+theme_skin: blue
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+    - jekyll
+
+exclude:
+  - docker-compose.yml
