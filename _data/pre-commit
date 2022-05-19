@@ -1,8 +1,0 @@
-#!/bin/sh
-
-echo "you are about to commit" $(git diff -cached --nameonly --diff-filter=ACM)
-echo "to" $(git branch --show-current)
-
-while : ; do 
-	pandoc data.yml -o cv.pdf --template=tempete.tex --pdf-engine=xelatex
-done
