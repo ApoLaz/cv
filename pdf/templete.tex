@@ -1,0 +1,104 @@
+\documentclass[11pt,oneside,a4paper]{article}
+
+\usepackage[most]{tcolorbox}
+
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ left=0.1cm,
+ right=0.1cm,
+ top=2cm,
+ bottom=0.1cm
+}
+%\definecolor{titleBack}{RGB}{0,66,21}
+
+%\title{ApoLaz}
+%\date{}
+
+\begin{document}
+
+\tcbset{colframe=white,colback=white,arc=0mm}
+
+\begin{minipage}[t]{15cm}
+ {\LARGE \bf $name$}\\[.2cm]
+\end{minipage}
+
+\begin{tcolorbox}
+ \begin{minipage}[t]{4cm}
+  \vspace*{-0.5cm}
+  \begin{tcolorbox}[grow to left by=0.6cm,colback=white,colframe=white]
+   \section*{Contact}
+    $if(contact)$
+     $for(contact)$
+      $contact.email$ \\
+      $contact.github$\\
+      $contact.phone$
+     $endfor$
+    $endif$
+   \section*{Languages}
+    $if(languages)$
+     $for(languages)$
+      $languages.idiom$\newline
+     $endfor$
+    $endif$
+   \section*{Education}
+    $if(education)$
+     $for(education)$
+      $education.degree$\newline
+      $education.time$\\
+      $education.university$\\
+     $endfor$
+    $endif$
+   \section*{Skills}
+	$if(skills)$
+	 $for(skills)$
+          \subsection*{$skills.category$} 
+           $skills.skill$
+         $endfor$
+	$endif$
+
+	\section*{Hobbies}
+	$if(hobbies)$
+	 $for(hobbies)$
+	  \subsection*{$hobbies.category$}
+	   $hobbies.hobby$\newline
+ 	 $endfor$
+	$endif$
+  \end{tcolorbox}
+ \end{minipage}
+ \begin{minipage}[t]{15cm}
+  \vspace*{-0.5cm}
+  \begin{tcolorbox}[grow to right by=0.6cm,colback=white,colframe=white]
+   \section*{About Me}
+    $if(profile)$
+    $profile$
+    $endif$
+ %\qquad\qquad\qquad  
+   \section*{Experience}
+    $if(experience)$
+     $for(experience)$
+      {\bf $experience.role$}\\
+      {\underline{$experience.company$}}\hspace{8.5cm}$experience.time$\\
+      $experience.details$\\
+      {{\bf Skills Required:} $experience.skills$}\\
+      
+     $endfor$
+    $endif$
+   
+   \section*{Projects}
+    $if(projects)$
+     $for(projects)$
+      {\bf $projects.title$}\\
+      $projects.link$\\
+      $projects.details$\\
+      
+     $endfor$
+    $endif$
+
+  \end{tcolorbox}
+ \end{minipage}
+\end{tcolorbox}
+
+
+
+\end{document} 
