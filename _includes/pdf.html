@@ -4,11 +4,11 @@
     <title></title>
 </head>
 <body>
-    <input type="button" value="PDF File" onclick="DownloadFile('pdf/cv.pdf')" />
+    <input type="button" value="PDF File" onclick="DownloadFile('https://github.com/ApoLaz/cv/blob/master/pdf/cv.pdf')" />
     <script type="text/javascript">
         function DownloadFile(fileName) {
             //Set the File URL.
-            var url = "https://github.com/ApoLaz/cv/blob/master/pdf/cv.pdf" + fileName;
+            var url = "pdf/cv.pdf" + fileName;
 
             //Create XMLHTTP Request.
             var req = new XMLHttpRequest();
